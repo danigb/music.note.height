@@ -1,0 +1,37 @@
+{
+  "name": "music.note.height",
+  "version": "0.0.2",
+  "description": "Tiny library to convert from midi <-> note name <-> frequency",
+  "main": "index.js",
+  "scripts": {
+    "test": "vows --spec test/*.js",
+    "docs": "docme API.md",
+    "dist": "browserify index.js | uglifyjs > dist/music.note.height.min.js&& ls -all dist/",
+    "disc": "browserify --full-paths index.js | uglifyjs | discify > tmp/disc.html&& open tmp/disc.html",
+    "coverage": "istanbul cover vows test/*.js",
+    "cover": "npm run coverage && open ./coverage/lcov-report/index.html",
+    "benchmarks": "node test/benchmarks/*.js",
+    "climate": "npm run coverage && npm run codeclimate",
+    "codeclimate": "CODECLIMATE_REPO_TOKEN=fcfefb53aa586b904e50df4da52d6dc294182107e236117758c3a048b17491ce codeclimate-test-reporter < coverage/lcov.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danigb/music.note.height.git"
+  },
+  "keywords": [
+    "music",
+    "music.kit"
+  ],
+  "author": "danigb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danigb/music.note.height/issues"
+  },
+  "homepage": "https://github.com/danigb/music.note.height#readme",
+  "devDependencies": {
+    "vows": "^0.8.1"
+  },
+  "dependencies": {
+    "music.notation": "file:../notation"
+  }
+}
