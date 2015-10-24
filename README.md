@@ -1,7 +1,7 @@
 # music.note.height
 
 [![Build Status](https://travis-ci.org/danigb/music.note.height.svg?branch=master)](https://travis-ci.org/danigb/music.note.height)
-[![Code Climate](https://codeclimate.com/github/danigb/music.note.height/badges/gpa.svg)](https://codeclimate.com/github/danigb/music.note.height)
+[![Test Coverage](https://codeclimate.com/github/danigb/music.note.height/badges/coverage.svg)](https://codeclimate.com/github/danigb/music.note.height/coverage)
 [![Coverage](https://codeclimate.com/github/danigb/music.note.height/badges/gpa.svg)](https://codeclimate.com/github/danigb/music.note.height)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![npm version](https://img.shields.io/npm/v/music.note.height.svg)](https://www.npmjs.com/package/music.note.height)
