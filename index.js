@@ -7,6 +7,18 @@ var SEMITONES = [ 0, 2, 4, 5, 7, 9, 11 ]
 // Chromatic melodic scale
 var CHROMATIC = [ 'C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B' ]
 
+/**
+ * Get the note in scienific notation or null if not a valid note
+ *
+ * @param {String} note - the note
+ * @return {String} the scientific notation string or null if not a valid note
+ *
+ * @example
+ * note('c#') // => 'C#'
+ * note('fx') // => 'F##'
+ * note('bbb') // => 'Bbb'
+ * note('m') // => null
+ */
 function note (src) {
   return notation.str(note.parse(src))
 }

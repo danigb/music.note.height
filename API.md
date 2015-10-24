@@ -14,117 +14,6 @@
 </div>
 <dl>
 <dt>
-<h4 class="name" id="accidentals"><span class="type-signature"></span>accidentals<span class="signature">(pitch)</span><span class="type-signature"> &rarr; {String}</span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Get the accidentals from a pitch</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>pitch</code></td>
-<td class="type">
-<span class="param-type">String</span>
-|
-<span class="param-type">Array</span>
-</td>
-<td class="description last"><p>the pitch</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
-<span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L81">lineno 81</a>
-</li>
-</ul></dd>
-</dl>
-<h5>Returns:</h5>
-<div class="param-desc">
-<p>the pitch accidentals</p>
-</div>
-<dl>
-<dt>
-Type
-</dt>
-<dd>
-<span class="param-type">String</span>
-</dd>
-</dl>
-<h5>Example</h5>
-<pre class="prettyprint"><code>pitch.accidentals('C##3') // => '##'
-pitch.accidentals('Bb4') // => 'b'
-pitch.accidentals('E') // => ''</code></pre>
-</dd>
-<dt>
-<h4 class="name" id="alterations"><span class="type-signature"></span>alterations<span class="signature">(pitch)</span><span class="type-signature"> &rarr; {String}</span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Get alterations of a pitch</p>
-<p>The alteration is the number of sharps or flats from the natural form</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>pitch</code></td>
-<td class="type">
-<span class="param-type">String</span>
-|
-<span class="param-type">Array</span>
-</td>
-<td class="description last"><p>the pitch</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
-<span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L64">lineno 64</a>
-</li>
-</ul></dd>
-</dl>
-<h5>Returns:</h5>
-<div class="param-desc">
-<p>the pitch alterations</p>
-</div>
-<dl>
-<dt>
-Type
-</dt>
-<dd>
-<span class="param-type">String</span>
-</dd>
-</dl>
-<h5>Example</h5>
-<pre class="prettyprint"><code>pitch.alterations('C##3') // => 2
-pitch.alterations('Bb4') // => -1
-pitch.alterations('E') // => 0</code></pre>
-</dd>
-<dt>
 <h4 class="name" id="cents"><span class="type-signature"></span>cents<span class="signature">(from, to, decimals)</span><span class="type-signature"> &rarr; {Integer}</span></h4>
 </dt>
 <dd>
@@ -174,7 +63,7 @@ pitch.alterations('E') // => 0</code></pre>
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L183">lineno 183</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L117">lineno 117</a>
 </li>
 </ul></dd>
 </dl>
@@ -229,7 +118,7 @@ if you need to know the difference between the the frequency and the pitch.</p>
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L135">lineno 135</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L69">lineno 69</a>
 </li>
 </ul></dd>
 <dt class="tag-see">See:</dt>
@@ -290,7 +179,7 @@ pitch class is given to the same midi number.</p>
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L98">lineno 98</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L32">lineno 32</a>
 </li>
 </ul></dd>
 </dl>
@@ -310,11 +199,11 @@ Type
 <pre class="prettyprint"><code>pitch.fromMidi(69) // => 'A4'</code></pre>
 </dd>
 <dt>
-<h4 class="name" id="letter"><span class="type-signature"></span>letter<span class="signature">(pitch)</span><span class="type-signature"> &rarr; {String}</span></h4>
+<h4 class="name" id="note"><span class="type-signature"></span>note<span class="signature">(note)</span><span class="type-signature"> &rarr; {String}</span></h4>
 </dt>
 <dd>
 <div class="description">
-<p>Get letter of the pitch (in uppercase)</p>
+<p>Get the note in scienific notation or null if not a valid note</p>
 </div>
 <h5>Parameters:</h5>
 <table class="params">
@@ -327,13 +216,11 @@ Type
 </thead>
 <tbody>
 <tr>
-<td class="name"><code>pitch</code></td>
+<td class="name"><code>note</code></td>
 <td class="type">
 <span class="param-type">String</span>
-|
-<span class="param-type">Array</span>
 </td>
-<td class="description last"><p>the pitch as string or array</p></td>
+<td class="description last"><p>the note</p></td>
 </tr>
 </tbody>
 </table>
@@ -343,13 +230,13 @@ Type
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L19">lineno 19</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L22">lineno 22</a>
 </li>
 </ul></dd>
 </dl>
 <h5>Returns:</h5>
 <div class="param-desc">
-<p>the letter of the pitch in uppercase</p>
+<p>the scientific notation string or null if not a valid note</p>
 </div>
 <dl>
 <dt>
@@ -360,115 +247,10 @@ Type
 </dd>
 </dl>
 <h5>Example</h5>
-<pre class="prettyprint"><code>pitch.letter('fx') // => 'F'</code></pre>
-</dd>
-<dt>
-<h4 class="name" id="octave"><span class="type-signature"></span>octave<span class="signature">(pitch)</span><span class="type-signature"> &rarr; {Integer}</span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Get the octave of a pitch</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>pitch</code></td>
-<td class="type">
-<span class="param-type">String</span>
-|
-<span class="param-type">Array</span>
-</td>
-<td class="description last"><p>the pitch</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
-<span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L34">lineno 34</a>
-</li>
-</ul></dd>
-</dl>
-<h5>Returns:</h5>
-<div class="param-desc">
-<p>the octave number</p>
-</div>
-<dl>
-<dt>
-Type
-</dt>
-<dd>
-<span class="param-type">Integer</span>
-</dd>
-</dl>
-<h5>Example</h5>
-<pre class="prettyprint"><code>pitch.octave('F#3') // => 3</code></pre>
-</dd>
-<dt>
-<h4 class="name" id="pitchClass"><span class="type-signature"></span>pitchClass<span class="signature">(pitch)</span><span class="type-signature"> &rarr; {String}</span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Get the pitch class (pitch name without octaves) from a pitch</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>pitch</code></td>
-<td class="type">
-<span class="param-type">String</span>
-|
-<span class="param-type">Array</span>
-</td>
-<td class="description last"><p>the pitch to get the pitchClass number from</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
-<span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L47">lineno 47</a>
-</li>
-</ul></dd>
-</dl>
-<h5>Returns:</h5>
-<div class="param-desc">
-<p>the pitch class</p>
-</div>
-<dl>
-<dt>
-Type
-</dt>
-<dd>
-<span class="param-type">String</span>
-</dd>
-</dl>
-<h5>Example</h5>
-<pre class="prettyprint"><code>pitch.pitchClass('a4') // => 'A'
-pitch.pitchClass('ab') // => 'Ab'
-pitch.pitchClass('cx2') // => 'C##'</code></pre>
+<pre class="prettyprint"><code>note('c#') // => 'C#'
+note('fx') // => 'F##'
+note('bbb') // => 'Bbb'
+note('m') // => null</code></pre>
 </dd>
 <dt>
 <h4 class="name" id="toFreq"><span class="type-signature"></span>toFreq<span class="signature">(pitch, tuning)</span><span class="type-signature"> &rarr; {Float}</span></h4>
@@ -509,7 +291,7 @@ pitch.pitchClass('cx2') // => 'C##'</code></pre>
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L162">lineno 162</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L96">lineno 96</a>
 </li>
 </ul></dd>
 </dl>
@@ -565,7 +347,7 @@ pitch.toFreq('A3', 444) // => 222</code></pre>
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L118">lineno 118</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L52">lineno 52</a>
 </li>
 </ul></dd>
 </dl>
