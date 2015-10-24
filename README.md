@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/danigb/music.note.height.svg?branch=master)](https://travis-ci.org/danigb/music.note.height)
 [![Code Climate](https://codeclimate.com/github/danigb/music.note.height/badges/gpa.svg)](https://codeclimate.com/github/danigb/music.note.height)
+[![Coverage](https://codeclimate.com/github/danigb/music.note.height/badges/gpa.svg)](https://codeclimate.com/github/danigb/music.note.height)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![npm version](https://img.shields.io/npm/v/music.note.height.svg)](https://www.npmjs.com/package/music.note.height)
 [![license](https://img.shields.io/npm/l/music.note.height.svg)](https://www.npmjs.com/package/music.note.height)
@@ -29,7 +30,7 @@ Install via npm: `npm install --save music.note.height` and require it.
 
 #### Browsers
 
-No distribution (yet). Use webpack, browserify or a similar tool.
+Grab it [here](https://github.com/danigb/music.note.height/blob/master/dist/music.note.height.min.js)
 
 ## Usage
 
