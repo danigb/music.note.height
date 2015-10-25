@@ -1,6 +1,6 @@
 {
   "name": "music.note.height",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tiny library to convert from midi <-> note name <-> frequency",
   "main": "index.js",
   "scripts": {
