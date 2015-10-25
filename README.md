@@ -22,15 +22,17 @@ synth.play(note.toFreq(name))
 
 This is part of [music.kit](https://github.com/danigb/music.kit)
 
+## Features
+
+- Note name to midi and midi to note name conversion
+- Note name to frequency and frequency to note name conversion
+- Frequency conversion with custom tunnings (different from A4 = 440hz)
+- Use scientific pitch by default. You can use your own note name parser
+- Calculate frequency deviations in cents
+
 ## Installation
 
-#### For node
-
-Install via npm: `npm install --save music.note.height` and require it.
-
-#### Browsers
-
-Grab it [here](https://github.com/danigb/music.note.height/blob/master/dist/music.note.height.min.js)
+Install via npm: `npm install --save music.note.height` and require it. Or grab the browser ready distribution file [here](https://github.com/danigb/music.note.height/blob/master/dist/music.note.height.min.js)
 
 ## Usage
 

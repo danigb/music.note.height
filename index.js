@@ -41,7 +41,7 @@ note.build = notation.str
  * @return {String} the pitch
  *
  * @example
- * pitch.fromMidi(69) // => 'A4'
+ * note.fromMidi(69) // => 'A4'
  */
 note.fromMidi = function (midi) {
   var name = CHROMATIC[midi % 12]
@@ -58,8 +58,8 @@ note.fromMidi = function (midi) {
  * @return {Integer} the midi number
  *
  * @example
- * pitch.toMidi('A4') // => 69
- * pitch.toMidi('A3') // => 57
+ * note.toMidi('A4') // => 69
+ * note.toMidi('A3') // => 57
  */
 note.toMidi = notation.op(function (p) {
   if (!p[2] && p[2] !== 0) return null
@@ -67,52 +67,96 @@ note.toMidi = notation.op(function (p) {
 })
 
 /**
+ * Get the pitch of a given frequency using a custom tuning
+ *
+ * It will round the frequency to the nearest pitch frequency. Use `cents` function
+ * if you need to know the difference between the the frequency and the note.
+ *
+ * This function can be partially applied
+ *
+ * @name fromCustomFreq
+ * @function
+ * @param {Float} tuning - the frequency of A4
+ * @param {Float} freq - the frequency of the note you want
+ * @return {String} the note name
+ *
+ * @see fromFreq
+ * @see cents
+ *
+ * @example
+ * var fromFreq = note.fromCustomFreq(444)
+ * fromFreq(222) // => 'A3'
+ */
+note.fromCustomFreq = function (t, f) {
+  var tuning = t || 440
+  if (arguments.length > 1) return note.fromCustomFreq(tuning)(f)
+
+  return function (freq) {
+    var lineal = 12 * ((Math.log(freq) - Math.log(tuning)) / Math.log(2))
+    var midi = Math.round(69 + lineal)
+    return note.fromMidi(midi)
+  }
+}
+
+/**
  * Get the pitch of a given frequency.
  *
  * It will round the frequency to the nearest pitch frequency. Use `cents` function
- * if you need to know the difference between the the frequency and the pitch.
+ * if you need to know the difference between the the frequency and the note.
  *
  * @name fromFreq
  * @function
  * @param {Float} freq - the frequency
  * @return {String} the pitch
  *
- * @see cents
+ * @see fromCustomFreq
  *
  * @example
- * pitch.fromFreq(440) // => 'A4'
- * pitch.fromFreq(443) // => 'A4'
- * pitch.cents(443, 'A4') // => ... to get the difference
+ * note.fromFreq(440) // => 'A4'
+ * note.fromFreq(443) // => 'A4'
+ * note.cents(443, 'A4') // => ... to get the difference
  */
-note.fromFreq = function (freq, tuning) {
-  tuning = tuning || 440
-  var lineal = 12 * ((Math.log(freq) - Math.log(tuning)) / Math.log(2))
-  var midi = Math.round(69 + lineal)
-  return note.fromMidi(midi)
-}
+note.fromFreq = note.fromCustomFreq(440)
 
 // decimal number
 var NUM = /^\d+(?:\.\d+)?$/
 /**
- * Get the pitch frequency in hertzs
+ * Get the pitch frequency in herzs with custom concert tuning
+ *
+ * This function is currified so it can be partially applied
+ *
+ * @param {Float} tuning - the frequency of A4 (null means 440)
+ * @param {String|Array} pitch - the note name
+ * @return {Float} the frequency of the note
+ *
+ * @example
+ * var toFreq = note.toCustomFreq(444)
+ * toFreq('A2') // => 111
+ */
+note.toCustomFreq = function (tuning, p) {
+  tuning = tuning || 440
+  if (arguments.length > 1) return note.toCustomFreq(tuning)(p)
+  return function (p) {
+    if (NUM.test(p)) return +p
+    var midi = note.toMidi(p)
+    if (!midi) return null
+    return Math.pow(2, (midi - 69) / 12) * tuning
+  }
+}
+
+/**
+ * Get the pitch frequency in hertzs (using 440 as concert pitch)
  *
  * @name toFreq
  * @function
  * @param {String} pitch - the pitch
- * @param {Integer} tuning - optional tuning, 440 by default
  * @return {Float} - the pitch frequency
  *
  * @example
- * pitch.toFreq('A4') // => 440
- * pitch.toFreq('A3', 444) // => 222
+ * note.toFreq('A4') // => 440
+ * note.toFreq('A3') // => 222
  */
-note.toFreq = function (p, tuning) {
-  if (NUM.test(p)) return +p
-  var midi = note.toMidi(p)
-  if (!midi) return null
-  tuning = tuning || 440
-  return Math.pow(2, (midi - 69) / 12) * tuning
-}
+note.toFreq = note.toCustomFreq(440)
 
 /**
  * Get the distance in cents between pitches or frequencies
@@ -125,9 +169,9 @@ note.toFreq = function (p, tuning) {
  * @return {Integer} the distance in cents
  *
  * @example
- * cents(440, 444) // => 15.66
- * cents('A4', 444) // => 15.66
- * cents('A4', 'A#4') // => 100
+ * note.cents(440, 444) // => 15.66
+ * note.cents('A4', 444) // => 15.66
+ * note.cents('A4', 'A#4') // => 100
  */
 note.cents = function (from, to, decimals) {
   var dec = decimals ? Math.pow(10, decimals) : 100
@@ -136,4 +180,5 @@ note.cents = function (from, to, decimals) {
   return Math.floor(1200 * (Math.log(toFreq / fromFreq) * dec / Math.log(2))) / dec
 }
 
-module.exports = note
+if (typeof module === 'object' && module.exports) module.exports = note
+if (typeof window !== 'undefined') window.note = note

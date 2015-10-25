@@ -33,33 +33,5 @@ vows.describe('music.note.height').addBatch({
       assert.equal(note.toMidi('B#3'), note.toMidi('C4'))
       assert.equal(note.toMidi('B##3'), note.toMidi('Db4'))
     }
-  },
-  'frequencies': {
-    'fromFreq': function () {
-      assert.equal(note.fromFreq(440), 'A4')
-      assert.equal(note.fromFreq(220), 'A3')
-      assert.equal(note.fromFreq(329.6275569128699), 'E4')
-      assert.equal(note.fromFreq(330), 'E4')
-      assert.equal(note.fromFreq(335), 'E4')
-      assert.equal(note.fromFreq(340), 'F4')
-      assert.equal(note.fromFreq(349.2282314330039), 'F4')
-    },
-    'fromFreq with custom tuning': function () {
-      assert.equal(note.fromFreq(220, 220), 'A4')
-    },
-    'toFreq': function () {
-      assert.equal(note.toFreq('A4'), 440)
-      assert.equal(note.toFreq('A3'), 220)
-      assert.equal(note.toFreq('E4'), 329.6275569128699)
-      assert.equal(note.toFreq('F4'), 349.2282314330039)
-    },
-    'toFreq custom tuning': function () {
-      assert.equal(note.toFreq('A4', 444), 444)
-      assert.equal(note.toFreq('A3', 444), 222)
-    },
-    'cents': function () {
-      assert.equal(note.cents('A4', 'A#4'), 100)
-      assert.equal(note.cents('A4', 444), 15.66)
-    }
   }
 }).export(module)
