@@ -6,18 +6,19 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![npm version](https://img.shields.io/npm/v/music.note.height.svg)](https://www.npmjs.com/package/music.note.height)
 [![license](https://img.shields.io/npm/l/music.note.height.svg)](https://www.npmjs.com/package/music.note.height)
+[![distribution](https://img.shields.io/badge/dist-2.3kb-blue.svg)](https://github.com/danigb/music.kit)
 [![music.kit](https://img.shields.io/badge/music-kit-yellow.svg)](https://github.com/danigb/music.kit)
 
-`music.note.height` is a small and fast library to convert between midi numbers <-> note names <-> frequencies. It's the bridge between midi, your app and your synthetizers.
+`music.note.height` is a small (2.3kb) and fast library to convert between midi numbers <-> note names <-> frequencies. It's the bridge between midi, your app and your synthetizers.
 
 ```js
 var note = require('music.note.height')
 // get a note from midi
-var name = note.fromMidi( ... )
+var name = note.fromMidi(69) // => 'A4'
 // write it to the console
-console.log(name)
+console.log(name) // => prints 'A4'
 // give it to your synth
-synth.play(note.toFreq(name))
+note.toFreq(name) // => 440
 ```
 
 This is part of [music.kit](https://github.com/danigb/music.kit)

@@ -63,7 +63,7 @@
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L161">lineno 161</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L164">lineno 164</a>
 </li>
 </ul></dd>
 </dl>
@@ -126,7 +126,7 @@ if you need to know the difference between the the frequency and the note.</p>
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L69">lineno 69</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L72">lineno 72</a>
 </li>
 </ul></dd>
 <dt class="tag-see">See:</dt>
@@ -187,7 +187,7 @@ if you need to know the difference between the the frequency and the note.</p>
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L101">lineno 101</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L104">lineno 104</a>
 </li>
 </ul></dd>
 <dt class="tag-see">See:</dt>
@@ -248,7 +248,7 @@ pitch class is given to the same midi number.</p>
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L32">lineno 32</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L34">lineno 34</a>
 </li>
 </ul></dd>
 </dl>
@@ -299,7 +299,7 @@ Type
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L22">lineno 22</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L24">lineno 24</a>
 </li>
 </ul></dd>
 </dl>
@@ -353,7 +353,7 @@ note('m') // => null</code></pre>
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L147">lineno 147</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L150">lineno 150</a>
 </li>
 </ul></dd>
 </dl>
@@ -409,7 +409,7 @@ note.toFreq('A3') // => 222</code></pre>
 <li>
 <a href="https://github.com/danigb/music.note.height/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L52">lineno 52</a>
+<a href="https://github.com/danigb/music.note.height/blob/master/index.js#L54">lineno 54</a>
 </li>
 </ul></dd>
 </dl>

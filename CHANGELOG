@@ -1,10 +1,11 @@
 CHANGELOG
 
+[0.0.4] Reduce dependencies to music.note.parser
 [0.0.3] Custom tuning version of functions (toFreq is now mapeable)
 [0.0.2] First version
 
-
 DIST
+[0.0.4] 2878
 [0.0.3] 4665
 [0.0.2] 4335
 

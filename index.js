@@ -1,11 +1,13 @@
 'use strict'
 
-var notation = require('music.notation')
+var parser = require('music.note.parser')
 
 // Semitones from C to C D E F G A B
 var SEMITONES = [ 0, 2, 4, 5, 7, 9, 11 ]
 // Chromatic melodic scale
 var CHROMATIC = [ 'C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B' ]
+
+function arr (p) { return Array.isArray(p) ? p : parser(p) }
 
 /**
  * Get the note in scienific notation or null if not a valid note
@@ -20,14 +22,14 @@ var CHROMATIC = [ 'C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B
  * note('m') // => null
  */
 function note (src) {
-  return notation.str(note.parse(src))
+  return parser.build(arr(src))
 }
 
 note.parse = function (note) {
-  var arr = notation.arr(note)
-  return arr && arr.length !== 3 ? arr : null
+  var p = arr(note)
+  return p && p.length !== 3 ? p : null
 }
-note.build = notation.str
+note.build = parser.build
 
 /**
  * Get the pitch of the given midi number
@@ -61,10 +63,11 @@ note.fromMidi = function (midi) {
  * note.toMidi('A4') // => 69
  * note.toMidi('A3') // => 57
  */
-note.toMidi = notation.op(function (p) {
-  if (!p[2] && p[2] !== 0) return null
+note.toMidi = function (note) {
+  var p = Array.isArray(note) ? note : parser(note)
+  if (!p || (!p[2] && p[2] !== 0)) return null
   return SEMITONES[p[0]] + p[1] + 12 * (p[2] + 1)
-})
+}
 
 /**
  * Get the pitch of a given frequency using a custom tuning
